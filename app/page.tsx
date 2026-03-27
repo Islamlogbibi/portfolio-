@@ -162,17 +162,18 @@ export default function Portfolio() {
             <p className="text-xl text-muted-foreground">Research-focused projects in BCI, AI, and assistive technology</p>
           </div>
 
-          {/* BCI Project 1 - Featured */}
+          {/* BCI Project 1 - Proposed Research */}
           <div className="mb-12">
             <Card className="overflow-hidden border-2 border-primary/20">
               <CardContent className="p-8">
                 <div className="flex items-center gap-2 mb-4">
                   <Brain className="w-6 h-6 text-primary" />
                   <Badge variant="default" className="bg-primary">
-                    AI & Signal Processing
+                    Proposed Research
                   </Badge>
+                  <Badge variant="secondary">AI & Signal Processing</Badge>
                 </div>
-                <CardTitle className="text-2xl mb-4">EEG-Based Motor Intention Decoding</CardTitle>
+                <CardTitle className="text-2xl mb-4">EEG-Based Motor Intention Decoding for Assistive Human-Computer Interaction</CardTitle>
                 <CardDescription className="text-base mb-6">
                   Decode EEG signals into control commands using signal processing and deep learning (CNN/LSTM). Designed for assistive systems enabling motor-impaired users to interact with technology through brain signals.
                 </CardDescription>
@@ -183,21 +184,28 @@ export default function Portfolio() {
                   <Badge variant="outline">Assistive Technology</Badge>
                   <Badge variant="outline">BCI</Badge>
                 </div>
+                <Button className="bg-primary hover:bg-primary/90">
+                  <a href="/research/eeg-motor-intention" className="flex items-center gap-2">
+                    <BookOpen className="w-4 h-4" />
+                    View Research Details
+                  </a>
+                </Button>
               </CardContent>
             </Card>
           </div>
 
-          {/* BCI Project 2 - Featured */}
+          {/* BCI Project 2 - Draft Paper */}
           <div className="mb-12">
             <Card className="overflow-hidden border-2 border-primary/20">
               <CardContent className="p-8">
                 <div className="flex items-center gap-2 mb-4">
                   <Zap className="w-6 h-6 text-primary" />
                   <Badge variant="default" className="bg-primary">
-                    Real-time Translation
+                    Draft Paper
                   </Badge>
+                  <Badge variant="secondary">Real-time Translation</Badge>
                 </div>
-                <CardTitle className="text-2xl mb-4">Multi-Modal Wearable System for Sign Language Translation</CardTitle>
+                <CardTitle className="text-2xl mb-4">A Multi-Modal Wearable System for Real-Time Sign Language Translation and Adaptive Remote Communication</CardTitle>
                 <CardDescription className="text-base mb-6">
                   Combines glove sensors and EMG signals to provide real-time translation to speech and text. Features adaptive models that learn user-specific patterns for improved accuracy and personalization.
                 </CardDescription>
@@ -208,6 +216,12 @@ export default function Portfolio() {
                   <Badge variant="outline">Assistive Tech</Badge>
                   <Badge variant="outline">Human-Computer Interaction</Badge>
                 </div>
+                <Button className="bg-primary hover:bg-primary/90">
+                  <a href="/research/sign-language-translation" className="flex items-center gap-2">
+                    <BookOpen className="w-4 h-4" />
+                    View Research Details
+                  </a>
+                </Button>
               </CardContent>
             </Card>
           </div>
