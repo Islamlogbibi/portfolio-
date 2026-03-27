@@ -120,31 +120,7 @@ export default function BloodCareManagementPage() {
         </div>
       </section>
 
-      {/* Pricing Section */}
-      <section className="py-8 px-4 sm:px-6 lg:px-8 bg-primary/5">
-        <div className="max-w-4xl mx-auto">
-          <Card className="border-2 border-primary/20">
-            <CardContent className="p-8 text-center">
-              <div className="flex items-center justify-center gap-2 mb-4">
-                <ShoppingCart className="w-8 h-8 text-primary" />
-                <h2 className="text-2xl font-bold">Available for Purchase</h2>
-              </div>
-              <div className="text-4xl font-bold text-primary mb-2">8,000,000 Centimes</div>
-              <div className="text-xl text-muted-foreground mb-4">(80,000 Algerian Dinars)</div>
-              <p className="text-muted-foreground mb-6">
-                Complete healthcare management solution ready for deployment in blood donation centers and medical
-                facilities.
-              </p>
-              <Button size="lg" className="bg-primary hover:bg-primary/90">
-                <a href="#contact" className="flex items-center gap-2">
-                  Contact for Purchase
-                  <DollarSign className="w-4 h-4" />
-                </a>
-              </Button>
-            </CardContent>
-          </Card>
-        </div>
-      </section>
+
 
       {/* Image Gallery */}
       <section className="py-12 px-4 sm:px-6 lg:px-8">
@@ -340,7 +316,7 @@ export default function BloodCareManagementPage() {
             Back to Portfolio
           </Link>
           <p className="text-muted-foreground">
-            © 2025 Mabrouk Logbibi. BloodCare Management System - Available for Purchase.
+            © 2025 Mabrouk Logbibi. BloodCare Management System.
           </p>
         </div>
       </footer>
