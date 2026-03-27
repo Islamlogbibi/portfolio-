@@ -15,6 +15,10 @@ import {
   Eye,
   Award,
   Building,
+  Brain,
+  Zap,
+  Users,
+  Target,
 } from "lucide-react"
 
 export default function Portfolio() {
@@ -30,6 +34,14 @@ export default function Portfolio() {
     },
   ]
 
+  const researchInterests = [
+    { icon: Brain, title: "Brain-Computer Interfaces (EEG)", description: "Neural signal processing and decoding" },
+    { icon: Users, title: "Human-Computer Interaction", description: "Intuitive interface design and user experience" },
+    { icon: Zap, title: "Assistive Technologies", description: "Systems for motor-impaired users" },
+    { icon: Cpu, title: "Machine Learning for Time-Series", description: "Signal analysis and pattern recognition" },
+    { icon: Target, title: "Robotics & Intelligent Systems", description: "Autonomous and adaptive systems" },
+  ]
+
   return (
     <div className="min-h-screen bg-background">
       {/* Navigation */}
@@ -41,11 +53,17 @@ export default function Portfolio() {
               <a href="#home" className="text-foreground hover:text-primary transition-colors">
                 Home
               </a>
+              <a href="#interests" className="text-foreground hover:text-primary transition-colors">
+                Research
+              </a>
               <a href="#projects" className="text-foreground hover:text-primary transition-colors">
                 Projects
               </a>
               <a href="#about" className="text-foreground hover:text-primary transition-colors">
                 About
+              </a>
+              <a href="#japan" className="text-foreground hover:text-primary transition-colors">
+                Japan
               </a>
               <a href="#contact" className="text-foreground hover:text-primary transition-colors">
                 Contact
@@ -60,27 +78,78 @@ export default function Portfolio() {
         <div className="max-w-6xl mx-auto text-center">
           <div className="mb-8">
             <h1 className="text-4xl md:text-6xl font-bold text-balance mb-6">
-              Software & Intelligent
-              <span className="text-primary"> Systems Developer</span>
+              AI & BCI Research-Oriented
+              <span className="text-primary"> Engineer</span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto text-pretty">
-              Computer Science student at University of Badji Mokhtar, Annaba, specializing in web development, AI
-              systems, and healthcare technology solutions.
+              Building intelligent systems for human–machine interaction and assistive technology.
             </p>
           </div>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Button size="lg" className="bg-primary hover:bg-primary/90">
               <a href="#projects" className="flex items-center gap-2">
-                View My Work
+                View Projects
                 <ExternalLink className="w-4 h-4" />
               </a>
             </Button>
             <Button variant="outline" size="lg">
               <a href="#contact" className="flex items-center gap-2">
-                Get In Touch
+                Download CV
                 <Mail className="w-4 h-4" />
               </a>
             </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* About Section */}
+      <section id="about" className="py-20 px-4 sm:px-6 lg:px-8 bg-muted/30">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">About Me</h2>
+          </div>
+          <div className="bg-card rounded-lg p-8 border border-border">
+            <p className="text-lg text-foreground leading-relaxed mb-6">
+              Final-year student in Computer Science & Automation, ranked 5th nationally. Interested in Brain-Computer Interfaces, AI, and real-time human–machine interaction systems. Focused on building assistive technologies that bridge research and real-world applications.
+            </p>
+            <div className="grid md:grid-cols-3 gap-6 mt-8">
+              <div>
+                <h4 className="font-semibold text-primary mb-2">Education</h4>
+                <p className="text-sm text-muted-foreground">Computer Science & Automation<br />University of Badji Mokhtar, Annaba<br />Final Year | Rank: 5th National</p>
+              </div>
+              <div>
+                <h4 className="font-semibold text-primary mb-2">Experience</h4>
+                <p className="text-sm text-muted-foreground">Remote Developer<br />PromptLine (France)<br />AI & Backend Development</p>
+              </div>
+              <div>
+                <h4 className="font-semibold text-primary mb-2">Achievements</h4>
+                <p className="text-sm text-muted-foreground">National Rank 5th<br />Competitive Programming Winner<br />Patent-Related Project</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Research Interests Section */}
+      <section id="interests" className="py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Research Interests</h2>
+            <p className="text-xl text-muted-foreground">Focus areas in AI and human-machine interaction</p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {researchInterests.map((interest, idx) => {
+              const Icon = interest.icon
+              return (
+                <Card key={idx} className="hover:border-primary transition-colors">
+                  <CardContent className="p-6">
+                    <Icon className="w-8 h-8 text-primary mb-4" />
+                    <h3 className="font-semibold text-lg mb-2">{interest.title}</h3>
+                    <p className="text-sm text-muted-foreground">{interest.description}</p>
+                  </CardContent>
+                </Card>
+              )
+            })}
           </div>
         </div>
       </section>
@@ -90,7 +159,57 @@ export default function Portfolio() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Featured Projects</h2>
-            <p className="text-xl text-muted-foreground">Showcasing innovative solutions across different domains</p>
+            <p className="text-xl text-muted-foreground">Research-focused projects in BCI, AI, and assistive technology</p>
+          </div>
+
+          {/* BCI Project 1 - Featured */}
+          <div className="mb-12">
+            <Card className="overflow-hidden border-2 border-primary/20">
+              <CardContent className="p-8">
+                <div className="flex items-center gap-2 mb-4">
+                  <Brain className="w-6 h-6 text-primary" />
+                  <Badge variant="default" className="bg-primary">
+                    AI & Signal Processing
+                  </Badge>
+                </div>
+                <CardTitle className="text-2xl mb-4">EEG-Based Motor Intention Decoding</CardTitle>
+                <CardDescription className="text-base mb-6">
+                  Decode EEG signals into control commands using signal processing and deep learning (CNN/LSTM). Designed for assistive systems enabling motor-impaired users to interact with technology through brain signals.
+                </CardDescription>
+                <div className="flex flex-wrap gap-2 mb-6">
+                  <Badge variant="outline">EEG Signal Processing</Badge>
+                  <Badge variant="outline">Deep Learning</Badge>
+                  <Badge variant="outline">CNN/LSTM</Badge>
+                  <Badge variant="outline">Assistive Technology</Badge>
+                  <Badge variant="outline">BCI</Badge>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* BCI Project 2 - Featured */}
+          <div className="mb-12">
+            <Card className="overflow-hidden border-2 border-primary/20">
+              <CardContent className="p-8">
+                <div className="flex items-center gap-2 mb-4">
+                  <Zap className="w-6 h-6 text-primary" />
+                  <Badge variant="default" className="bg-primary">
+                    Real-time Translation
+                  </Badge>
+                </div>
+                <CardTitle className="text-2xl mb-4">Multi-Modal Wearable System for Sign Language Translation</CardTitle>
+                <CardDescription className="text-base mb-6">
+                  Combines glove sensors and EMG signals to provide real-time translation to speech and text. Features adaptive models that learn user-specific patterns for improved accuracy and personalization.
+                </CardDescription>
+                <div className="flex flex-wrap gap-2 mb-6">
+                  <Badge variant="outline">EMG Sensing</Badge>
+                  <Badge variant="outline">Wearable Tech</Badge>
+                  <Badge variant="outline">Real-time Processing</Badge>
+                  <Badge variant="outline">Assistive Tech</Badge>
+                  <Badge variant="outline">Human-Computer Interaction</Badge>
+                </div>
+              </CardContent>
+            </Card>
           </div>
 
           {/* BloodCare Management - Featured Project */}
@@ -335,67 +454,50 @@ export default function Portfolio() {
         </div>
       </section>
 
-      {/* About Section */}
-      <section id="about" className="py-20 px-4 sm:px-6 lg:px-8">
+      {/* Japan/Aichi Section */}
+      <section id="japan" className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">About Me</h2>
-            <p className="text-xl text-muted-foreground">
-              Passionate about creating intelligent systems that solve real-world problems
-            </p>
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Future Goals in Japan</h2>
           </div>
-
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <h3 className="text-2xl font-bold mb-6">Education & Background</h3>
-              <div className="space-y-4">
-                <div>
-                  <h4 className="font-semibold text-lg">BSc in Computer Science and Automation</h4>
-                  <p className="text-muted-foreground">University of Badji Mokhtar, Annaba</p>
-                  <p className="text-sm text-muted-foreground">Second Year Student</p>
-                </div>
-                <div>
-                  <h4 className="font-semibold">President</h4>
-                  <p className="text-muted-foreground">CSA Kernel within the opensource community</p>
-                </div>
-                <div>
-                  <h4 className="font-semibold">Achievement</h4>
-                  <p className="text-muted-foreground">First place in national problem-solving contest</p>
-                </div>
+          <div className="bg-card rounded-lg p-8 border border-border">
+            <p className="text-lg text-foreground leading-relaxed mb-6">
+              I aim to contribute to Aichi Prefecture&apos;s industrial ecosystem, particularly in robotics, automation, and AI-driven systems. My goal is to bridge academic research with real-world industrial applications, especially in assistive technologies and intelligent human–machine interaction.
+            </p>
+            <div className="grid md:grid-cols-2 gap-8 mt-8">
+              <div>
+                <h4 className="font-semibold text-primary text-lg mb-3">Aichi Industry Alignment</h4>
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  <li className="flex gap-2">
+                    <span className="text-primary">•</span>
+                    <span>Robotics and automation expertise</span>
+                  </li>
+                  <li className="flex gap-2">
+                    <span className="text-primary">•</span>
+                    <span>AI-driven intelligent systems</span>
+                  </li>
+                  <li className="flex gap-2">
+                    <span className="text-primary">•</span>
+                    <span>Assistive technology research</span>
+                  </li>
+                </ul>
               </div>
-            </div>
-
-            <div>
-              <h3 className="text-2xl font-bold mb-6">Technical Skills</h3>
-              <div className="space-y-4">
-                <div>
-                  <h4 className="font-semibold mb-2">Programming Languages</h4>
-                  <div className="flex flex-wrap gap-2">
-                    <Badge>Python</Badge>
-                    <Badge>C/C++</Badge>
-                    <Badge>JavaScript</Badge>
-                    <Badge>PHP</Badge>
-                  </div>
-                </div>
-                <div>
-                  <h4 className="font-semibold mb-2">Web Technologies</h4>
-                  <div className="flex flex-wrap gap-2">
-                    <Badge>React</Badge>
-                    <Badge>Django</Badge>
-                    <Badge>HTML/CSS</Badge>
-                    <Badge>MongoDB</Badge>
-                  </div>
-                </div>
-                <div>
-                  <h4 className="font-semibold mb-2">Tools & Technologies</h4>
-                  <div className="flex flex-wrap gap-2">
-                    <Badge>Git</Badge>
-                    <Badge>Linux</Badge>
-                    <Badge>OpenCV</Badge>
-                    <Badge>Arduino</Badge>
-                    <Badge>ROS</Badge>
-                  </div>
-                </div>
+              <div>
+                <h4 className="font-semibold text-primary text-lg mb-3">Research Vision</h4>
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  <li className="flex gap-2">
+                    <span className="text-primary">•</span>
+                    <span>BCI systems for real-world impact</span>
+                  </li>
+                  <li className="flex gap-2">
+                    <span className="text-primary">•</span>
+                    <span>Human-machine interaction innovation</span>
+                  </li>
+                  <li className="flex gap-2">
+                    <span className="text-primary">•</span>
+                    <span>Industrial-academic collaboration</span>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>

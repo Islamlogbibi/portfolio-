@@ -7,9 +7,9 @@ import { Suspense } from "react"
 import "./globals.css"
 
 export const metadata: Metadata = {
-  title: "Mabrouk Logbibi - Software & Intelligent Systems Developer",
+  title: "Mabrouk Logbibi - AI & BCI Research Engineer",
   description:
-    "Portfolio of Mabrouk Logbibi - Computer Science Student and Software Developer specializing in AI, healthcare systems, and intelligent solutions.",
+    "Portfolio of Mabrouk Logbibi - Final-year Computer Science student specializing in AI, Brain-Computer Interfaces (EEG), and assistive technology. Ranked 5th nationally.",
   generator: "v0.app",
 }
 
