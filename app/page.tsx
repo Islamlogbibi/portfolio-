@@ -242,7 +242,7 @@ export default function Portfolio() {
                   <div className="flex items-center gap-2 mb-4">
                     <Heart className="w-6 h-6 text-red-500" />
                     <Badge variant="default" className="bg-red-500">
-                      For Sale
+                      Featured Project
                     </Badge>
                     <Badge variant="secondary">Healthcare</Badge>
                   </div>
