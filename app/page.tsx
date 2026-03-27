@@ -92,10 +92,10 @@ export default function Portfolio() {
                 <ExternalLink className="w-4 h-4" />
               </a>
             </Button>
-            <Button variant="outline" size="lg">
-              <a href="#contact" className="flex items-center gap-2">
+            <Button variant="outline" size="lg" asChild>
+              <a href="/cv.pdf" download className="flex items-center gap-2">
                 Download CV
-                <Mail className="w-4 h-4" />
+                <ExternalLink className="w-4 h-4" />
               </a>
             </Button>
           </div>
